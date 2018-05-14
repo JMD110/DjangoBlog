@@ -1,0 +1,19 @@
+{% extends 'base1.html' %}
+
+{% block content %}
+<div class="demo-browser-content">
+    {% for foo in photos %}
+        {% if foo.image %}
+            <img src="/media/{{ foo.image }}" alt="">
+        {% endif %}
+    {% endfor %}
+    <br>
+    <h4 align="center">
+    一共{{ photos.paginator.num_pages }}页
+    {% for i in photos.paginator.page_range %}
+        <a href="?page_id={{ i }}">{{ i }}</a>
+    {% endfor %}
+    </h4>
+</div>
+
+{% endblock content %}

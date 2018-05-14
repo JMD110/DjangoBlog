@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>JMD'S BLOG</title>
+  <meta name="description" content="django-blog" />
+  <meta name="keywords" content="django, python" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  {% block title %}{% endblock %}
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+  <!-- modernizr enables HTML5 elements and feature detects -->
+  <script type="text/javascript" src="/static/js/modernizr-1.5.min.js"></script>
+</head>
+
+<body>
+  <div id="main">
+    <header>
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="{% url 'blog:index' %}">JMD<span class="logo_colour">blog</span></a></h1>
+          <h2>用django搭建的简易博客</h2>
+        </div>
+        <p style="float: right;"><img src="/static/images/twitter.png" alt="twitter" />&nbsp;<img src="/static/images/facebook.png" alt="facebook" />&nbsp;<img src="/static/images/rss.png" alt="rss" /></p>
+      </div>
+      <nav>
+        <ul class="sf-menu" id="nav">
+          <li class="selected"><a href="{% url 'blog:index' %}"> 主页 </a></li>
+          <li><a href="/search/"> 搜索 </a></li>
+          <li><a href="/blog"> 技术博文 </a></li>
+{#          <li><a href="#">生活</a>#}
+{#            <ul>#}
+{#              <li><a href="#"> 日记 </a></li>#}
+{#              <li><a href="#"> 照片 </a>#}
+{#              </li>#}
+{#            </ul>#}
+{#          </li>#}
+          <li><a href="{% url 'blog:contact' %}"> 联系我 </a></li>
+        </ul>
+      </nav>
+    </header>
+    {% block content %}{% endblock content %}
+    <footer>
+      <p>Copyright &copy; JMD | <a href="http://www.heartinternet.co.uk/dedicated-servers/">Dedicated servers</a> | <a href="http://www.css3templates.co.uk">design from css3templates.co.uk</a></p>
+    </footer>
+  </div>
+  <!-- javascript at the bottom for fast page loading -->
+  <script type="text/javascript" src="/static/js/jquery.js"></script>
+  <script type="text/javascript" src="/static/js/jquery.easing-sooper.js"></script>
+  <script type="text/javascript" src="/static/js/jquery.sooperfish.js"></script>
+  <script type="text/javascript" src="/static/js/image_fade.js"></script>
+  <script type="text/javascript">
+  </script>
+</body>
+</html>

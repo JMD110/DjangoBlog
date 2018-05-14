@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+      <div id="content">
+        <h4>百度搜索</h4>
+        <form action="http://www.baidu.com/baidu" target="_blank">
+            <input name=tn type=hidden value=baidu>
+            <a href="http://www.baidu.com/"></a>
+            <input class="search-input" type=text name=word size=30>
+            <button class="search-btn" type="submit">百度搜索</button>
+        </form>
+        <h4>本站搜索</h4>
+        <form action="search/" method="get">
+            <input class="search-input" type="text" name="search_for" size=30>
+            <button class="search-btn" type="submit">本站搜索</button>
+        </form>
+      {% if arts %}
+          <div id="blog_container">
+            {% for foo in arts %}
+            <h4 class="select"><a href="{% url 'blog:detail' foo.id %}">{{ foo.a_title }}</a>&nbsp;&nbsp;发表于{{ foo.a_create_time }}</h4>
+            <p>{{ foo.abstract }}<a href="{% url 'blog:detail' foo.id %}">read more.....</a></p>
+            {% endfor %}
+          </div>
+      {% else %}
+          <h4>请搜索,暂无搜索内容</h4>
+      {% endif %}
+      </div>
+{% endblock content %}
