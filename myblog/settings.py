@@ -77,11 +77,11 @@ WSGI_APPLICATION = 'myblog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'myblog',
+        'NAME': '', # 数据库名字
         'PORT': '3306',
-        'HOST': '119.23.44.91',
+        'HOST': '', # IP
         'USER': 'root',
-        'PASSWORD': 'Pp301911'
+        'PASSWORD': '' # 数据库密码
     }
 }
 
