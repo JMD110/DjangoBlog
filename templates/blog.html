@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div id="content">
+        <h2>博文:</h2>
+        <div id="blog_container">
+            {% for foo in articles %}
+            <h4 class="select"><a href="{% url 'blog:detail' foo.id %}">{{ foo.a_title }}</a>&nbsp;&nbsp;
+                发表于{{ foo.a_create_time }}
+            </h4>
+            <p>{{ foo.abstract }}<a href="{% url 'blog:detail' foo.id %}">read more.....</a></p>
+            {% endfor %}
+        </div>
+        一共{{ articles.paginator.num_pages }}页
+        {% for i in articles.paginator.page_range %}
+            <a href="?page_id={{ i }}">{{ i }}</a>
+        {% endfor %}
+        {% if articles.has_previous %}
+
+            <a href="?page_id={{ articles.previous_page_number }}">上一页</a>
+        {%endif%}
+        {% if articles.has_next %}
+
+            <a href="?page_id={{ articles.next_page_number }}">下一页</a>
+        {%endif%}
+        <p></p>
+      </div>
+{% endblock content %}

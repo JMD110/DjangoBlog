@@ -1,0 +1,15 @@
+{% extends 'base1.html' %}
+
+{% block content %}
+      <div id="acticle">
+          <h2>{{ article.a_title }}</h2>
+          <h3>发表于:{{ article.a_create_time }}</h3>
+          <div class="text-center">
+              {{ article.a_content | safe}}
+          </div>
+      </div>
+{% endblock content %}
+
+
+
+
