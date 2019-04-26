@@ -1,4 +1,4 @@
-# Django_blog
+# django_blog
 
 ### 由Django和MySQL数据库搭建的简易博客,显得似乎有些大材小用,不过可以熟悉Django的MVT设计模式
 ### 前端样式来源于Bootstrap上Hexo的主题修改,
