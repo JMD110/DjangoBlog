@@ -1,4 +1,4 @@
-Django==1.11.28
+Django==1.11.29
 django-markdown-dexu==1.0.5
 pymysql==0.8.0
 markdown==2.6.8
